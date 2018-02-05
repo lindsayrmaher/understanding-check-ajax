@@ -15,6 +15,41 @@ Your Tasks:
 
 // ALL YOUR CODE HERE
 
+document.getElementById('dogs').addEventListener('click', () => {
+  fetch('/dogs')
+  .then(result => result.json())
+  .then(data => {
+    renderView(data);
+    location.hash = 'dogs'
+  })
+  .catch(console.error);
+})
+
+
+document.getElementById('cats').addEventListener('click', () => {
+  fetch('/cats')
+  .then(result => result.json())
+  .then(data => {
+    renderView(data);
+    location.hash = 'cats'
+  })
+  .catch(console.error);
+})
+
+document.getElementById('dragons').addEventListener('click', () => {
+  fetch('/dragons')
+  .then(result => result.json())
+  .then(data => {
+    renderView(data);
+    location.hash = 'dragons'
+  })
+  .catch(console.error);
+})
+
+if(location.hash.length){
+  const hash = location.hash.slice(1);
+  
+}
 
 //This function takes an array of animal objects, and renders them on the page.
 //You don't need to change this function!
